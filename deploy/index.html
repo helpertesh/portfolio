@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peter Mutethia | Full-Stack Web Developer</title>
-    <meta name="description" content="Peter Mutethia (Helpertesh) is a full-stack web developer in Nairobi, Kenya, building fast, responsive websites and web apps with Python, JavaScript, React and FastAPI.">
+    <meta name="description" content="Peter Mutethia (Helpertesh) is a full-stack web developer in Nyeri, Kenya, building fast, responsive websites and web apps with Python, JavaScript, React and FastAPI.">
     <meta name="theme-color" content="#0b1120">
 
     <!-- Social sharing (what shows up when you paste the link in WhatsApp, LinkedIn, X) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Peter Mutethia | Full-Stack Web Developer">
-    <meta property="og:description" content="Fast, responsive websites and web apps. Python, JavaScript, React, FastAPI. Based in Nairobi, Kenya.">
+    <meta property="og:description" content="Fast, responsive websites and web apps. Python, JavaScript, React, FastAPI. Based in Nyeri, Kenya.">
     <meta property="og:image" content="assets/peter.jpg">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -31,8 +31,8 @@
       "jobTitle": "Full-Stack Web Developer",
       "email": "mailto:mutethiap25@gmail.com",
       "telephone": "+254712919229",
-      "address": { "@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "KE" },
-      "sameAs": ["https://github.com/helpertesh"]
+      "address": { "@type": "PostalAddress", "addressLocality": "Nyeri", "addressCountry": "KE" },
+      "sameAs": ["https://github.com/helpertesh", "https://www.linkedin.com/in/peter-mutethia-954aa8364/"]
     }
     </script>
 
@@ -87,7 +87,7 @@
             -webkit-font-smoothing: antialiased; overflow-x: hidden;
             transition: background .3s, color .3s;
         }
-        img { display: block; max-width: 100%; }
+        img { display: block; max-width: 100%; height: auto; }
         a { color: inherit; text-decoration: none; }
         ul { list-style: none; }
         button, input, textarea { font: inherit; color: inherit; }
@@ -234,7 +234,7 @@
         .about-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 4rem; align-items: center; }
         .about-photo { position: relative; max-width: 420px; justify-self: center; }
         .about-photo::before { content: ""; position: absolute; inset: 0; border-radius: var(--radius); border: 2px solid var(--accent); transform: translate(16px, 16px); opacity: .7; z-index: 0; }
-        .about-photo img { position: relative; z-index: 1; border-radius: var(--radius); aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; box-shadow: var(--shadow); }
+        .about-photo img { position: relative; z-index: 1; width: 100%; height: auto; border-radius: var(--radius); aspect-ratio: 3 / 4; object-fit: cover; object-position: center 35%; box-shadow: var(--shadow); }
         .about-badge {
             position: absolute; z-index: 2; left: -1.25rem; bottom: 1.75rem;
             background: var(--card-2); border: 1px solid var(--border-strong); border-radius: 14px; padding: .8rem 1rem; box-shadow: var(--shadow);
@@ -488,7 +488,7 @@
                     <p class="terminal-line"><b>~/peter-mutethia</b> $ whoami</p>
                     <span class="pill"><span class="dot"></span> Available for freelance &amp; full-time work</span>
                     <h1>Hi, I'm Peter Mutethia.</h1>
-                    <p class="hero-role">Full-stack web developer based in Nairobi, Kenya</p>
+                    <p class="hero-role">Full-stack web developer based in Nyeri, Kenya</p>
                     <p class="lead">I build fast, responsive websites and web apps from the database to the pixel. Python and JavaScript on the back end, React and clean CSS on the front, shipped with Git and Docker.</p>
                     <div class="hero-actions">
                         <a href="#projects" class="btn btn-primary"><i class="fas fa-arrow-down"></i> See my work</a>
@@ -499,6 +499,7 @@
                         <span>FIND ME ON</span>
                         <!-- EDIT: add LinkedIn / X / etc. by copying one of these lines and changing the href + icon -->
                         <a class="icon-link" href="https://github.com/helpertesh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a class="icon-link" href="https://www.linkedin.com/in/peter-mutethia-954aa8364/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a class="icon-link wa" href="https://wa.me/254712919229?text=Hi%20Peter%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         <a class="icon-link" href="mailto:mutethiap25@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                         <a class="icon-link" href="tel:+254712919229" aria-label="Phone"><i class="fas fa-phone"></i></a>
@@ -512,7 +513,7 @@
 <span class="kw">class</span> <span class="fn">Developer</span>:
     name     = <span class="str">"Peter Mutethia"</span>
     alias    = <span class="str">"Helpertesh"</span>
-    based_in = <span class="str">"Nairobi, KE"</span>
+    based_in = <span class="str">"Nyeri, KE"</span>
     stack    = [<span class="str">"Python"</span>, <span class="str">"JavaScript"</span>,
                 <span class="str">"React"</span>, <span class="str">"FastAPI"</span>]
     since    = <span class="fn">2018</span>
@@ -550,7 +551,7 @@
                 </header>
                 <div class="about-grid">
                     <div class="about-photo reveal">
-                        <img src="assets/peter.jpg" alt="Peter Mutethia working at a laptop" width="800" height="1200" loading="lazy">
+                        <img src="assets/peter.jpg" alt="Peter Mutethia, software developer" width="800" height="1067" loading="lazy">
                         <div class="about-badge">
                             <span class="num">5+</span>
                             <span class="lbl">years building<br>for the web</span>
@@ -878,11 +879,12 @@
                             </li>
                             <li>
                                 <span class="contact-icon"><i class="fas fa-location-dot"></i></span>
-                                <div><strong>Location</strong><span class="val">Nairobi, Kenya &middot; open to remote</span></div>
+                                <div><strong>Location</strong><span class="val">Nyeri, Kenya &middot; open to remote</span></div>
                             </li>
                         </ul>
                         <div class="social-row">
                             <a class="icon-link" href="https://github.com/helpertesh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a class="icon-link" href="https://www.linkedin.com/in/peter-mutethia-954aa8364/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                             <a class="icon-link wa" href="https://wa.me/254712919229?text=Hi%20Peter%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                             <a class="icon-link" href="mailto:mutethiap25@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                         </div>
@@ -922,6 +924,7 @@
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
                 <a href="https://github.com/helpertesh" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/in/peter-mutethia-954aa8364/" target="_blank" rel="noopener">LinkedIn</a>
             </div>
         </div>
     </footer>
