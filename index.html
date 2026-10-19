@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peter Mutethia | Full-Stack Web Developer</title>
+    <meta name="description" content="Peter Mutethia (Helpertesh) is a full-stack web developer in Nairobi, Kenya, building fast, responsive websites and web apps with Python, JavaScript, React and FastAPI.">
+    <meta name="theme-color" content="#0b1120">
+
+    <!-- Social sharing (what shows up when you paste the link in WhatsApp, LinkedIn, X) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Peter Mutethia | Full-Stack Web Developer">
+    <meta property="og:description" content="Fast, responsive websites and web apps. Python, JavaScript, React, FastAPI. Based in Nairobi, Kenya.">
+    <meta property="og:image" content="assets/peter.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233b82f6'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='32' fill='white' text-anchor='middle'%3EPM%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+
+    <!-- Structured data so Google understands who this page is about -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Peter Mutethia",
+      "alternateName": "Helpertesh",
+      "jobTitle": "Full-Stack Web Developer",
+      "email": "mailto:mutethiap25@gmail.com",
+      "telephone": "+254712919229",
+      "address": { "@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "KE" },
+      "sameAs": ["https://github.com/helpertesh"]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg: #0b1120;
+            --bg-2: #0f172a;
+            --card: #111b30;
+            --card-2: #16213a;
+            --border: rgba(148, 163, 184, 0.14);
+            --border-strong: rgba(148, 163, 184, 0.28);
+            --grid: rgba(148, 163, 184, 0.06);
+            --text: #e5ecf6;
+            --muted: #94a3b8;
+            --muted-2: #64748b;
+            --accent: #3b82f6;
+            --accent-2: #60a5fa;
+            --accent-soft: rgba(59, 130, 246, 0.14);
+            --glow-1: rgba(59, 130, 246, 0.22);
+            --glow-2: rgba(139, 92, 246, 0.16);
+            --success: #22c55e;
+            --error: #ef4444;
+            --radius: 18px;
+            --radius-sm: 10px;
+            --shadow: 0 20px 50px rgba(2, 6, 23, 0.55);
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        :root[data-theme="light"] {
+            --bg: #f6f8fc;
+            --bg-2: #eef2f8;
+            --card: #ffffff;
+            --card-2: #f1f5fb;
+            --border: rgba(15, 23, 42, 0.08);
+            --border-strong: rgba(15, 23, 42, 0.16);
+            --grid: rgba(15, 23, 42, 0.05);
+            --text: #0f172a;
+            --muted: #475569;
+            --muted-2: #64748b;
+            --accent: #2563eb;
+            --accent-2: #1d4ed8;
+            --accent-soft: rgba(37, 99, 235, 0.1);
+            --glow-1: rgba(37, 99, 235, 0.14);
+            --glow-2: rgba(139, 92, 246, 0.12);
+            --shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            background: var(--bg); color: var(--text); line-height: 1.65;
+            -webkit-font-smoothing: antialiased; overflow-x: hidden;
+            transition: background .3s, color .3s;
+        }
+        img { display: block; max-width: 100%; }
+        a { color: inherit; text-decoration: none; }
+        ul { list-style: none; }
+        button, input, textarea { font: inherit; color: inherit; }
+        ::selection { background: var(--accent); color: #fff; }
+        .container { width: min(1140px, 100% - 2rem); margin: 0 auto; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* ---------- Buttons ---------- */
+        .btn {
+            display: inline-flex; align-items: center; gap: .55rem;
+            padding: .85rem 1.5rem; border-radius: 999px;
+            font-weight: 600; font-size: .95rem; line-height: 1;
+            border: 1px solid transparent; cursor: pointer; white-space: nowrap;
+            transition: transform .25s var(--ease), background .25s, border-color .25s, box-shadow .25s, color .25s;
+        }
+        .btn:active { transform: translateY(1px) scale(.99); }
+        .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.35); }
+        .btn-primary:hover { background: var(--accent-2); transform: translateY(-2px); box-shadow: 0 14px 34px rgba(59, 130, 246, 0.45); }
+        .btn-ghost { background: transparent; color: var(--text); border-color: var(--border-strong); }
+        .btn-ghost:hover { border-color: var(--accent-2); color: var(--accent-2); transform: translateY(-2px); }
+        .btn-sm { padding: .6rem 1.05rem; font-size: .85rem; }
+        .btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+
+        /* ---------- Header ---------- */
+        .site-header {
+            position: fixed; inset: 0 0 auto 0; z-index: 100; padding: 1rem 0;
+            transition: padding .3s, background .3s, border-color .3s;
+            border-bottom: 1px solid transparent;
+        }
+        .site-header.scrolled {
+            padding: .6rem 0; background: color-mix(in srgb, var(--bg) 80%, transparent);
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            border-bottom-color: var(--border);
+        }
+        .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+        .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -.02em; display: inline-flex; align-items: center; gap: .55rem; }
+        .logo-mark {
+            width: 34px; height: 34px; border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            display: grid; place-items: center; font-size: .8rem; font-weight: 800; color: #fff; letter-spacing: 0;
+        }
+        .nav-right { display: flex; align-items: center; gap: .5rem; }
+        .nav-links { display: flex; align-items: center; gap: .25rem; }
+        .nav-links a {
+            padding: .5rem .85rem; border-radius: 999px; font-weight: 500; font-size: .93rem; color: var(--muted);
+            transition: color .2s, background .2s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--text); background: color-mix(in srgb, var(--muted) 12%, transparent); }
+        .nav-links a.nav-cta { margin-left: .5rem; color: #fff; background: var(--accent); }
+        .nav-links a.nav-cta:hover { background: var(--accent-2); color: #fff; }
+        .icon-btn {
+            width: 42px; height: 42px; border-radius: 10px; display: grid; place-items: center;
+            background: var(--card); border: 1px solid var(--border); cursor: pointer; font-size: 1rem; color: var(--text);
+            transition: border-color .2s, color .2s, transform .2s;
+        }
+        .icon-btn:hover { border-color: var(--accent); color: var(--accent-2); }
+        .nav-toggle { display: none; }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            position: relative; overflow: hidden; padding: 9.5rem 0 5rem;
+            min-height: min(100svh, 860px); display: flex; align-items: center;
+        }
+        .hero::before {
+            content: ""; position: absolute; inset: 0; pointer-events: none;
+            background:
+                radial-gradient(700px 420px at 15% 20%, var(--glow-1), transparent 60%),
+                radial-gradient(600px 400px at 85% 80%, var(--glow-2), transparent 60%);
+        }
+        .hero::after {
+            content: ""; position: absolute; inset: 0; pointer-events: none;
+            background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: radial-gradient(ellipse at center, #000 20%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center, #000 20%, transparent 70%);
+        }
+        .hero .container { position: relative; z-index: 1; }
+        .hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 3rem; align-items: center; }
+        .hero-copy, .hero-code { min-width: 0; }
+        .terminal-line { font-family: 'JetBrains Mono', monospace; font-size: .85rem; color: var(--muted); margin-bottom: 1rem; }
+        .terminal-line b { color: var(--accent-2); font-weight: 500; }
+        .pill {
+            display: inline-flex; align-items: center; gap: .55rem; padding: .4rem .9rem .4rem .6rem; border-radius: 999px;
+            background: var(--accent-soft); border: 1px solid rgba(59, 130, 246, 0.35);
+            color: var(--accent-2); font-size: .8rem; font-weight: 600; letter-spacing: .02em;
+        }
+        .pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--success); animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, .6); }
+            70% { box-shadow: 0 0 0 9px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+        .hero h1 { margin: 1.25rem 0 .5rem; font-size: clamp(2.6rem, 6vw, 4.4rem); line-height: 1.05; font-weight: 800; letter-spacing: -.035em; }
+        .hero-role {
+            font-size: clamp(1.2rem, 2.6vw, 1.7rem); font-weight: 700; letter-spacing: -.02em;
+            background: linear-gradient(90deg, var(--accent-2), #a78bfa);
+            -webkit-background-clip: text; background-clip: text; color: transparent;
+        }
+        .lead { margin: 1.4rem 0 2rem; max-width: 52ch; color: var(--muted); font-size: 1.08rem; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; }
+        .hero-social { display: flex; align-items: center; gap: .6rem; margin-top: 2.25rem; }
+        .hero-social span { font-size: .8rem; color: var(--muted-2); margin-right: .25rem; }
+        .icon-link {
+            width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center;
+            border: 1px solid var(--border); background: var(--card); color: var(--muted); transition: all .25s var(--ease);
+        }
+        .icon-link:hover { color: var(--accent-2); border-color: var(--accent); background: var(--accent-soft); transform: translateY(-2px); }
+
+        .code-window {
+            border-radius: var(--radius); background: #0a1020; border: 1px solid rgba(148,163,184,.28);
+            box-shadow: var(--shadow); overflow: hidden; transform: rotate(1.2deg); transition: transform .6s var(--ease);
+        }
+        .code-window:hover { transform: rotate(0deg) translateY(-4px); }
+        .code-bar { display: flex; align-items: center; gap: .45rem; padding: .8rem 1rem; background: rgba(255,255,255,.03); border-bottom: 1px solid rgba(148,163,184,.14); }
+        .code-bar i { width: 12px; height: 12px; border-radius: 50%; display: block; }
+        .code-bar i:nth-child(1) { background: #ff5f57; } .code-bar i:nth-child(2) { background: #febc2e; } .code-bar i:nth-child(3) { background: #28c840; }
+        .code-bar span { margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: .75rem; color: #64748b; }
+        .code-window pre { margin: 0; padding: 1.4rem 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: .86rem; line-height: 1.75; color: #c7d2fe; overflow-x: auto; }
+        .kw { color: #c084fc; } .fn { color: #fbbf24; } .str { color: #86efac; } .pr { color: #7dd3fc; } .cm { color: #64748b; font-style: italic; }
+        .cursor { display: inline-block; width: 8px; height: 1em; background: #60a5fa; vertical-align: -2px; animation: blink 1s steps(2) infinite; }
+        @keyframes blink { to { visibility: hidden; } }
+
+        /* ---------- Ticker ---------- */
+        .ticker {
+            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+            background: var(--bg-2); overflow: hidden; padding: 1rem 0;
+            mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+            -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+        }
+        .ticker-track { display: flex; gap: 3rem; width: max-content; animation: scroll 36s linear infinite; }
+        .ticker-track span { display: inline-flex; align-items: center; gap: .6rem; font-family: 'JetBrains Mono', monospace; font-size: .85rem; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; }
+        .ticker-track span i { color: var(--accent-2); }
+        @keyframes scroll { to { transform: translateX(-50%); } }
+
+        /* ---------- Sections ---------- */
+        .section { padding: 6.5rem 0; }
+        .section-alt { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .section-head { max-width: 640px; margin-bottom: 3.25rem; }
+        .section-head .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-2); margin-bottom: .6rem; }
+        .section-head h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); letter-spacing: -.03em; font-weight: 800; line-height: 1.15; }
+        .section-head p { margin-top: .75rem; color: var(--muted); font-size: 1.05rem; }
+
+        /* ---------- About ---------- */
+        .about-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 4rem; align-items: center; }
+        .about-photo { position: relative; max-width: 420px; justify-self: center; }
+        .about-photo::before { content: ""; position: absolute; inset: 0; border-radius: var(--radius); border: 2px solid var(--accent); transform: translate(16px, 16px); opacity: .7; z-index: 0; }
+        .about-photo img { position: relative; z-index: 1; border-radius: var(--radius); aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; box-shadow: var(--shadow); }
+        .about-badge {
+            position: absolute; z-index: 2; left: -1.25rem; bottom: 1.75rem;
+            background: var(--card-2); border: 1px solid var(--border-strong); border-radius: 14px; padding: .8rem 1rem; box-shadow: var(--shadow);
+            display: flex; align-items: center; gap: .8rem;
+        }
+        .about-badge .num { font-size: 1.6rem; font-weight: 800; line-height: 1; color: var(--accent-2); }
+        .about-badge .lbl { font-size: .78rem; color: var(--muted); line-height: 1.2; }
+        .about-text h3 { font-size: 1.55rem; letter-spacing: -.02em; margin-bottom: 1rem; }
+        .about-text p { color: var(--muted); margin-bottom: 1rem; }
+        .now-box {
+            display: flex; gap: .9rem; align-items: flex-start; margin: 1.5rem 0;
+            padding: 1rem 1.1rem; border-radius: 14px; background: var(--card); border: 1px dashed var(--border-strong);
+        }
+        .now-box i { color: var(--accent-2); margin-top: .25rem; }
+        .now-box strong { display: block; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted-2); margin-bottom: .2rem; }
+        .now-box span { color: var(--text); font-size: .95rem; }
+        .checklist { display: grid; gap: .65rem; margin: 0 0 2rem; }
+        .checklist li { display: flex; align-items: flex-start; gap: .75rem; }
+        .checklist i { flex: none; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent-2); font-size: .7rem; margin-top: .2rem; }
+        .about-actions { display: flex; flex-wrap: wrap; gap: .8rem; }
+
+        /* ---------- Stack (bento) ---------- */
+        .stack-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.25rem; }
+        .stack-card {
+            position: relative; overflow: hidden; grid-column: span 2;
+            padding: 1.6rem; border-radius: var(--radius); background: var(--card); border: 1px solid var(--border);
+            transition: transform .35s var(--ease), border-color .3s, box-shadow .3s;
+        }
+        .stack-card.wide { grid-column: span 3; }
+        .stack-card.full { grid-column: span 6; }
+        .stack-card::after { content: ""; position: absolute; inset: 0; opacity: 0; transition: opacity .3s; background: radial-gradient(400px 160px at 20% 0%, var(--glow-1), transparent 60%); pointer-events: none; }
+        .stack-card:hover { transform: translateY(-6px); border-color: rgba(59,130,246,.45); box-shadow: var(--shadow); }
+        .stack-card:hover::after { opacity: 1; }
+        .stack-card > * { position: relative; z-index: 1; }
+        .stack-top { display: flex; align-items: center; gap: .9rem; margin-bottom: 1.1rem; }
+        .stack-icon { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent-2); font-size: 1.2rem; flex: none; }
+        .stack-card h3 { font-size: 1.05rem; line-height: 1.2; }
+        .stack-card .stack-sub { font-size: .8rem; color: var(--muted-2); }
+        .chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+        .chips li {
+            font-family: 'JetBrains Mono', monospace; font-size: .76rem; padding: .4rem .7rem; border-radius: 8px;
+            background: color-mix(in srgb, var(--muted) 10%, transparent); color: var(--text); border: 1px solid var(--border);
+            display: inline-flex; align-items: center; gap: .4rem; transition: border-color .2s, color .2s;
+        }
+        .chips li i { color: var(--accent-2); font-size: .8rem; }
+        .chips li.hot { border-color: rgba(59,130,246,.5); background: var(--accent-soft); }
+        .stack-card:hover .chips li { border-color: var(--border-strong); }
+
+        /* ---------- Services ---------- */
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+        .service-card {
+            padding: 1.75rem; border-radius: var(--radius); background: var(--card); border: 1px solid var(--border);
+            display: flex; flex-direction: column; gap: .8rem; transition: transform .35s var(--ease), border-color .3s, box-shadow .3s;
+        }
+        .service-card:hover { transform: translateY(-6px); border-color: rgba(59,130,246,.45); box-shadow: var(--shadow); }
+        .service-num { font-family: 'JetBrains Mono', monospace; font-size: .8rem; color: var(--accent-2); letter-spacing: .1em; }
+        .service-card h3 { font-size: 1.15rem; }
+        .service-card p { color: var(--muted); font-size: .95rem; flex: 1; }
+        .service-card ul { display: grid; gap: .35rem; font-size: .88rem; color: var(--muted); }
+        .service-card ul li::before { content: "→ "; color: var(--accent-2); }
+
+        /* ---------- Timeline ---------- */
+        .timeline { position: relative; max-width: 760px; }
+        .timeline::before { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(var(--accent), var(--border)); }
+        .tl-item { position: relative; padding: 0 0 2.25rem 2.5rem; }
+        .tl-item:last-child { padding-bottom: 0; }
+        .tl-item::before {
+            content: ""; position: absolute; left: 0; top: .45rem; width: 16px; height: 16px; border-radius: 50%;
+            background: var(--bg); border: 3px solid var(--accent); box-shadow: 0 0 0 4px var(--accent-soft);
+        }
+        .tl-date { font-family: 'JetBrains Mono', monospace; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-2); }
+        .tl-item h3 { font-size: 1.15rem; margin: .25rem 0 .35rem; }
+        .tl-item p { color: var(--muted); font-size: .97rem; max-width: 60ch; }
+        .tl-item .chips { margin-top: .7rem; }
+
+        /* ---------- Projects ---------- */
+        .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .project-card {
+            display: flex; flex-direction: column; overflow: hidden;
+            border-radius: var(--radius); background: var(--card); border: 1px solid var(--border);
+            transition: transform .35s var(--ease), border-color .3s, box-shadow .3s;
+        }
+        .project-card:hover { transform: translateY(-6px); border-color: var(--border-strong); box-shadow: var(--shadow); }
+        .project-card.featured { grid-column: span 3; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); }
+        .project-thumb { position: relative; display: block; overflow: hidden; aspect-ratio: 16 / 10; background: #0a1020; }
+        .project-card.featured .project-thumb { aspect-ratio: auto; min-height: 320px; }
+        .project-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .7s var(--ease); }
+        .project-card:hover .project-thumb img { transform: scale(1.05); }
+        .project-thumb .overlay { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(11, 17, 32, 0.55); opacity: 0; transition: opacity .3s; }
+        .project-thumb:hover .overlay, .project-thumb:focus-visible .overlay { opacity: 1; }
+        .project-thumb .overlay span { display: inline-flex; align-items: center; gap: .5rem; padding: .7rem 1.2rem; border-radius: 999px; background: #fff; color: #0b1120; font-weight: 700; font-size: .9rem; }
+        .project-body { padding: 1.5rem; display: flex; flex-direction: column; gap: .85rem; flex: 1; }
+        .project-card.featured .project-body { padding: 2.25rem; justify-content: center; }
+        .project-kicker { font-family: 'JetBrains Mono', monospace; font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-2); }
+        .project-body h3 { font-size: 1.25rem; letter-spacing: -.01em; }
+        .project-card.featured h3 { font-size: 1.7rem; }
+        .project-body p { color: var(--muted); font-size: .97rem; }
+        .tags { display: flex; flex-wrap: wrap; gap: .45rem; }
+        .tags li { font-family: 'JetBrains Mono', monospace; font-size: .72rem; padding: .3rem .65rem; border-radius: 6px; background: color-mix(in srgb, var(--muted) 10%, transparent); color: var(--muted); border: 1px solid var(--border); }
+        .project-links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: auto; padding-top: .5rem; }
+        .soon { font-size: .85rem; color: var(--muted-2); display: inline-flex; align-items: center; gap: .45rem; }
+        .more-card { grid-column: 1 / -1; flex-direction: row; align-items: center; gap: 1.25rem; padding: 1.5rem 2rem; border-style: dashed; }
+        .more-card .stack-icon { margin: 0; }
+        .more-card h3 { font-size: 1.15rem; margin-bottom: .2rem; }
+        .more-card p { color: var(--muted); font-size: .95rem; }
+        .more-card .btn { margin-left: auto; }
+
+        /* ---------- Contact ---------- */
+        .contact-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 3rem; align-items: start; }
+        .contact-aside h3 { font-size: 1.5rem; letter-spacing: -.02em; margin-bottom: .6rem; }
+        .contact-aside > p { color: var(--muted); margin-bottom: 1.75rem; }
+        .contact-list { display: grid; gap: .85rem; margin-bottom: 1.75rem; }
+        .contact-list li { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.1rem; border-radius: 14px; background: var(--card); border: 1px solid var(--border); transition: border-color .25s, transform .25s var(--ease); }
+        .contact-list li:hover { border-color: rgba(59,130,246,.45); transform: translateX(4px); }
+        .contact-icon { flex: none; width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent-2); font-size: 1.05rem; }
+        .contact-list strong { display: block; font-size: .78rem; color: var(--muted-2); text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
+        .contact-list a, .contact-list span.val { font-weight: 500; }
+        .contact-list a:hover { color: var(--accent-2); }
+        .social-row { display: flex; gap: .6rem; }
+        .contact-form { padding: 2rem; border-radius: var(--radius); background: var(--card); border: 1px solid var(--border); display: grid; gap: 1.1rem; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+        .field { display: grid; gap: .45rem; }
+        .field label { font-size: .85rem; font-weight: 600; color: var(--muted); }
+        .field input, .field textarea { width: 100%; padding: .85rem 1rem; border-radius: var(--radius-sm); background: var(--bg); border: 1px solid var(--border-strong); color: var(--text); transition: border-color .2s, box-shadow .2s; }
+        .field input::placeholder, .field textarea::placeholder { color: var(--muted-2); }
+        .field input:focus, .field textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px rgba(59,130,246,.18); }
+        .field textarea { resize: vertical; min-height: 150px; }
+        .contact-form .btn { justify-self: start; }
+
+        /* ---------- WhatsApp ---------- */
+        .wa { --wa: #25d366; }
+        .icon-link.wa:hover, .contact-list li.wa:hover { border-color: var(--wa); }
+        .icon-link.wa:hover { color: var(--wa); background: rgba(37, 211, 102, .12); }
+        .contact-list li.wa .contact-icon { background: rgba(37, 211, 102, .14); color: var(--wa); }
+        .contact-list li.wa a:hover { color: var(--wa); }
+        .btn-wa { background: #25d366; color: #062b14; box-shadow: 0 10px 30px rgba(37, 211, 102, .3); }
+        .btn-wa:hover { background: #2ee07a; transform: translateY(-2px); box-shadow: 0 14px 34px rgba(37, 211, 102, .4); color: #062b14; }
+        .wa-float {
+            position: fixed; left: 1.25rem; bottom: 1.25rem; z-index: 95;
+            display: inline-flex; align-items: center; gap: .6rem; padding: .75rem 1.1rem .75rem .8rem;
+            border-radius: 999px; background: #25d366; color: #062b14; font-weight: 700; font-size: .9rem;
+            box-shadow: 0 12px 30px rgba(37, 211, 102, .35); transition: transform .25s var(--ease), box-shadow .25s;
+        }
+        .wa-float i { font-size: 1.35rem; }
+        .wa-float:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(37, 211, 102, .45); }
+        @media (max-width: 768px) {
+            .wa-float { padding: .8rem; }
+            .wa-float span { display: none; }
+        }
+
+        /* ---------- Footer ---------- */
+        .site-footer { padding: 2.5rem 0; border-top: 1px solid var(--border); }
+        .footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; color: var(--muted); font-size: .9rem; }
+        .footer-links { display: flex; gap: 1.25rem; }
+        .footer-links a:hover { color: var(--accent-2); }
+
+        /* ---------- Toast + back to top ---------- */
+        .toast {
+            position: fixed; left: 50%; bottom: 1.5rem; z-index: 200; transform: translate(-50%, 20px); opacity: 0; pointer-events: none;
+            padding: .9rem 1.3rem; border-radius: 12px; font-weight: 600; font-size: .92rem;
+            background: var(--card-2); border: 1px solid var(--border-strong); color: var(--text); box-shadow: var(--shadow);
+            transition: transform .35s var(--ease), opacity .3s; display: flex; align-items: center; gap: .6rem; max-width: calc(100% - 2rem);
+        }
+        .toast.show { transform: translate(-50%, 0); opacity: 1; }
+        .toast.success { border-color: rgba(34,197,94,.5); } .toast.success i { color: var(--success); }
+        .toast.error { border-color: rgba(239,68,68,.5); } .toast.error i { color: var(--error); }
+        .to-top {
+            position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 90; width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center;
+            background: var(--card-2); border: 1px solid var(--border-strong); color: var(--text); cursor: pointer;
+            opacity: 0; transform: translateY(10px); pointer-events: none; transition: opacity .3s, transform .3s var(--ease), border-color .2s;
+        }
+        .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+        .to-top:hover { border-color: var(--accent); color: var(--accent-2); }
+
+        /* ---------- Reveal ---------- */
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+        .reveal.visible { opacity: 1; transform: none; }
+        .delay-1 { transition-delay: .12s; } .delay-2 { transition-delay: .24s; } .delay-3 { transition-delay: .36s; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+            .reveal { opacity: 1; transform: none; } html { scroll-behavior: auto; }
+        }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 1024px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .code-window { max-width: 560px; transform: none; }
+            .projects-grid, .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .project-card.featured { grid-column: span 2; grid-template-columns: 1fr; }
+            .project-card.featured .project-thumb { aspect-ratio: 16 / 9; min-height: 0; }
+            .stack-grid { grid-template-columns: repeat(2, 1fr); }
+            .stack-card, .stack-card.wide { grid-column: span 1; }
+            .stack-card.full { grid-column: span 2; }
+            .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .about-photo { max-width: 360px; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .section { padding: 4.5rem 0; }
+            .hero { padding: 7.5rem 0 4rem; min-height: 0; }
+            .nav-toggle { display: grid; }
+            .nav-links {
+                position: absolute; top: calc(100% + .5rem); left: 1rem; right: 1rem;
+                flex-direction: column; align-items: stretch; gap: .25rem; padding: .75rem;
+                background: var(--bg-2); border: 1px solid var(--border-strong); border-radius: 14px; box-shadow: var(--shadow);
+                opacity: 0; transform: translateY(-8px); pointer-events: none; transition: opacity .25s, transform .25s var(--ease);
+            }
+            .nav-links.open { opacity: 1; transform: none; pointer-events: auto; }
+            .nav-links a { padding: .8rem 1rem; }
+            .nav-links a.nav-cta { margin: .35rem 0 0; justify-content: center; }
+            .projects-grid, .services-grid, .stack-grid { grid-template-columns: 1fr; }
+            .project-card.featured, .stack-card.full { grid-column: span 1; }
+            .more-card { flex-direction: column; align-items: flex-start; }
+            .more-card .btn { margin-left: 0; }
+            .form-row { grid-template-columns: 1fr; }
+            .contact-form { padding: 1.4rem; }
+            .about-badge { left: 0; bottom: -1rem; }
+            .about-photo { width: calc(100% - 12px); }
+            .about-photo::before { transform: translate(12px, 12px); }
+            .code-window pre { font-size: .78rem; padding: 1.1rem; }
+            .footer-inner { justify-content: center; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header" id="top">
+        <div class="container nav">
+            <a href="#top" class="logo"><span class="logo-mark">PM</span>Peter Mutethia</a>
+            <div class="nav-right">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#stack">Stack</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#journey">Journey</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact" class="btn btn-primary btn-sm nav-cta">Hire me</a></li>
+                </ul>
+                <button type="button" class="icon-btn" id="themeToggle" aria-label="Switch to light theme" title="Toggle theme"><i class="fas fa-sun"></i></button>
+                <button type="button" class="icon-btn nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ============ HERO ============ -->
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+                <div class="hero-copy reveal">
+                    <p class="terminal-line"><b>~/peter-mutethia</b> $ whoami</p>
+                    <span class="pill"><span class="dot"></span> Available for freelance &amp; full-time work</span>
+                    <h1>Hi, I'm Peter Mutethia.</h1>
+                    <p class="hero-role">Full-stack web developer based in Nairobi, Kenya</p>
+                    <p class="lead">I build fast, responsive websites and web apps from the database to the pixel. Python and JavaScript on the back end, React and clean CSS on the front, shipped with Git and Docker.</p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary"><i class="fas fa-arrow-down"></i> See my work</a>
+                        <a href="https://wa.me/254712919229?text=Hi%20Peter%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+                        <a href="Peter-Mutethia-Resume.pdf" class="btn btn-ghost" download><i class="fas fa-file-arrow-down"></i> Download resume</a>
+                    </div>
+                    <div class="hero-social">
+                        <span>FIND ME ON</span>
+                        <!-- EDIT: add LinkedIn / X / etc. by copying one of these lines and changing the href + icon -->
+                        <a class="icon-link" href="https://github.com/helpertesh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a class="icon-link wa" href="https://wa.me/254712919229?text=Hi%20Peter%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a class="icon-link" href="mailto:mutethiap25@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a class="icon-link" href="tel:+254712919229" aria-label="Phone"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+
+                <div class="hero-code reveal delay-1">
+                    <div class="code-window" aria-hidden="true">
+                        <div class="code-bar"><i></i><i></i><i></i><span>developer.py</span></div>
+<pre><span class="cm"># who's behind the keyboard</span>
+<span class="kw">class</span> <span class="fn">Developer</span>:
+    name     = <span class="str">"Peter Mutethia"</span>
+    alias    = <span class="str">"Helpertesh"</span>
+    based_in = <span class="str">"Nairobi, KE"</span>
+    stack    = [<span class="str">"Python"</span>, <span class="str">"JavaScript"</span>,
+                <span class="str">"React"</span>, <span class="str">"FastAPI"</span>]
+    since    = <span class="fn">2018</span>
+
+    <span class="kw">def</span> <span class="fn">build</span>(self, idea):
+        <span class="kw">return</span> self.design(idea).code().ship()<span class="cursor"></span></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ TICKER ============ -->
+        <div class="ticker" aria-hidden="true">
+            <div class="ticker-track" id="ticker">
+                <span><i class="fab fa-python"></i>Python</span>
+                <span><i class="fab fa-js"></i>JavaScript</span>
+                <span><i class="fab fa-react"></i>React</span>
+                <span><i class="fas fa-bolt"></i>FastAPI</span>
+                <span><i class="fab fa-node-js"></i>Node.js</span>
+                <span><i class="fas fa-database"></i>PostgreSQL</span>
+                <span><i class="fab fa-docker"></i>Docker</span>
+                <span><i class="fab fa-git-alt"></i>Git</span>
+                <span><i class="fas fa-wind"></i>Tailwind CSS</span>
+                <span><i class="fas fa-plug"></i>REST APIs</span>
+                <span><i class="fab fa-linux"></i>Linux</span>
+            </div>
+        </div>
+
+        <!-- ============ ABOUT ============ -->
+        <section class="section" id="about">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow">01 &mdash; About</p>
+                    <h2>Turning ideas into clean, working software.</h2>
+                </header>
+                <div class="about-grid">
+                    <div class="about-photo reveal">
+                        <img src="assets/peter.jpg" alt="Peter Mutethia working at a laptop" width="800" height="1200" loading="lazy">
+                        <div class="about-badge">
+                            <span class="num">5+</span>
+                            <span class="lbl">years building<br>for the web</span>
+                        </div>
+                    </div>
+                    <div class="about-text reveal delay-1">
+                        <h3>Front-end roots, full-stack today</h3>
+                        <p>I started building for the web in 2018 with HTML and CSS, and I've been hooked ever since. Those front-end roots still show: I care about layouts that work on every screen and interfaces that feel obvious to use.</p>
+                        <p>These days I work across the whole stack. I design REST APIs with FastAPI and Node.js, model data in PostgreSQL and MySQL, build React front-ends, and ship it all with Git, Docker and a proper deployment workflow.</p>
+                        <div class="now-box">
+                            <i class="fas fa-wave-square"></i>
+                            <div>
+                                <strong>Currently</strong>
+                                <span>Deepening my FastAPI and React skills, and open to freelance projects and full-time roles.</span>
+                            </div>
+                        </div>
+                        <ul class="checklist">
+                            <li><i class="fas fa-check"></i> Mobile-first layouts that work on every screen</li>
+                            <li><i class="fas fa-check"></i> Clean, tested APIs with clear documentation</li>
+                            <li><i class="fas fa-check"></i> Honest communication and reliable delivery</li>
+                        </ul>
+                        <div class="about-actions">
+                            <a href="Peter-Mutethia-Resume.pdf" class="btn btn-primary" download><i class="fas fa-file-arrow-down"></i> Download resume</a>
+                            <a href="#contact" class="btn btn-ghost">Let's work together</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ STACK ============ -->
+        <section class="section section-alt" id="stack">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow">02 &mdash; Stack</p>
+                    <h2>What I build with.</h2>
+                    <p>Grouped by where it sits in the stack. Highlighted chips are the tools I reach for first.</p>
+                </header>
+                <!-- EDIT: add a tool by copying a <li> inside the right card. Add class="hot" to highlight it. -->
+                <div class="stack-grid">
+                    <article class="stack-card wide reveal">
+                        <div class="stack-top">
+                            <div class="stack-icon"><i class="fas fa-code"></i></div>
+                            <div><h3>Programming</h3><span class="stack-sub">Languages I write every week</span></div>
+                        </div>
+                        <ul class="chips">
+                            <li class="hot"><i class="fab fa-python"></i>Python</li>
+                            <li class="hot"><i class="fab fa-js"></i>JavaScript (ES6+)</li>
+                            <li><i class="fas fa-c"></i>C++</li>
+                            <li><i class="fab fa-html5"></i>HTML5</li>
+                            <li><i class="fab fa-css3-alt"></i>CSS3</li>
+                        </ul>
+                    </article>
+                    <article class="stack-card wide reveal delay-1">
+                        <div class="stack-top">
+                            <div class="stack-icon"><i class="fas fa-window-maximize"></i></div>
+                            <div><h3>Front-end</h3><span class="stack-sub">Interfaces people actually enjoy</span></div>
+                        </div>
+                        <ul class="chips">
+                            <li class="hot"><i class="fab fa-react"></i>React</li>
+                            <li><i class="fas fa-layer-group"></i>Redux</li>
+                            <li class="hot"><i class="fas fa-wind"></i>Tailwind CSS</li>
+                            <li><i class="fab fa-bootstrap"></i>Bootstrap</li>
+                            <li><i class="fas fa-mobile-screen"></i>Responsive design</li>
+                        </ul>
+                    </article>
+                    <article class="stack-card reveal">
+                        <div class="stack-top">
+                            <div class="stack-icon"><i class="fas fa-server"></i></div>
+                            <div><h3>Back-end &amp; APIs</h3><span class="stack-sub">Where the logic lives</span></div>
+                        </div>
+                        <ul class="chips">
+                            <li class="hot"><i class="fas fa-bolt"></i>FastAPI</li>
+                            <li><i class="fas fa-flask"></i>Flask</li>
+                            <li><i class="fab fa-node-js"></i>Node.js</li>
+                            <li><i class="fas fa-route"></i>Express.js</li>
+                            <li><i class="fas fa-plug"></i>REST APIs</li>
+                            <li><i class="fas fa-shield-halved"></i>Pydantic</li>
+                            <li><i class="fas fa-book"></i>Swagger / OpenAPI</li>
+                        </ul>
+                    </article>
+                    <article class="stack-card reveal delay-1">
+                        <div class="stack-top">
+                            <div class="stack-icon"><i class="fas fa-database"></i></div>
+                            <div><h3>Databases</h3><span class="stack-sub">Structured and document stores</span></div>
+                        </div>
+                        <ul class="chips">
+                            <li class="hot"><i class="fas fa-database"></i>PostgreSQL</li>
+                            <li><i class="fas fa-database"></i>MySQL</li>
+                            <li><i class="fas fa-database"></i>SQLite</li>
+                            <li><i class="fas fa-leaf"></i>MongoDB (fundamentals)</li>
+                        </ul>
+                    </article>
+                    <article class="stack-card reveal delay-2">
+                        <div class="stack-top">
+                            <div class="stack-icon"><i class="fas fa-toolbox"></i></div>
+                            <div><h3>Tools</h3><span class="stack-sub">Daily drivers</span></div>
+                        </div>
+                        <ul class="chips">
+                            <li class="hot"><i class="fab fa-git-alt"></i>Git</li>
+                            <li><i class="fab fa-github"></i>GitHub</li>
+                            <li><i class="fas fa-code"></i>VS Code</li>
+                            <li><i class="fas fa-paper-plane"></i>Postman</li>
+                            <li class="hot"><i class="fab fa-docker"></i>Docker</li>
+                            <li><i class="fas fa-cubes"></i>Docker Compose</li>
+                            <li><i class="fab fa-linux"></i>Linux</li>
+                        </ul>
+                    </article>
+                    <article class="stack-card full reveal">
+                        <div class="stack-top">
+                            <div class="stack-icon"><i class="fas fa-list-check"></i></div>
+                            <div><h3>How I work</h3><span class="stack-sub">Practices that keep projects healthy</span></div>
+                        </div>
+                        <ul class="chips">
+                            <li><i class="fas fa-pen-to-square"></i>CRUD design</li>
+                            <li><i class="fas fa-vial"></i>API testing</li>
+                            <li><i class="fas fa-bug"></i>Debugging</li>
+                            <li><i class="fas fa-sliders"></i>Environment configuration</li>
+                            <li><i class="fas fa-rocket"></i>Deployment workflows</li>
+                            <li><i class="fas fa-code-branch"></i>Version control</li>
+                            <li><i class="fas fa-universal-access"></i>Accessibility</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SERVICES ============ -->
+        <section class="section" id="services">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow">03 &mdash; Services</p>
+                    <h2>What I can do for you.</h2>
+                    <p>Three ways we can work together, from a one-page site to a full product.</p>
+                </header>
+                <div class="services-grid">
+                    <article class="service-card reveal">
+                        <span class="service-num">01</span>
+                        <h3>Websites &amp; landing pages</h3>
+                        <p>Fast, responsive, search-friendly sites built from scratch or from your design, with a contact form that actually reaches you.</p>
+                        <ul>
+                            <li>Business and portfolio sites</li>
+                            <li>Landing pages for campaigns</li>
+                            <li>Hosting and domain setup</li>
+                        </ul>
+                    </article>
+                    <article class="service-card reveal delay-1">
+                        <span class="service-num">02</span>
+                        <h3>Web apps &amp; APIs</h3>
+                        <p>Full-stack applications with a React front-end, a Python or Node back-end, a real database and documented REST endpoints.</p>
+                        <ul>
+                            <li>Booking and dashboard systems</li>
+                            <li>FastAPI / Express back-ends</li>
+                            <li>Auth, CRUD and reporting</li>
+                        </ul>
+                    </article>
+                    <article class="service-card reveal delay-2">
+                        <span class="service-num">03</span>
+                        <h3>Fixes &amp; improvements</h3>
+                        <p>Already have a site? I'll make it faster, fix the mobile layout, squash bugs and add the features you've been putting off.</p>
+                        <ul>
+                            <li>Performance and SEO tune-ups</li>
+                            <li>Mobile responsiveness</li>
+                            <li>New features on existing code</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PROJECTS ============ -->
+        <section class="section section-alt" id="projects">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow">04 &mdash; Projects</p>
+                    <h2>Selected work.</h2>
+                    <p>A few things I've built recently. More on GitHub.</p>
+                </header>
+                <!--
+                    EDIT: HOW TO ADD A PROJECT
+                    Copy one <article class="project-card"> block below and change:
+                      - the <img src> (put your screenshot in /assets and reference it as assets/your-file.jpg)
+                      - the <h3> title and the <p> description
+                      - the <li> tags
+                      - the two links: "Live demo" (your Netlify / Vercel URL) and "Source" (your GitHub repo URL)
+                    If a project has no link yet, delete the <a> buttons and use the "soon" line instead (see the Weather card).
+                    Add class="featured" to make a card span the full width with a big screenshot.
+                    See HOW-TO-EDIT.md for a full walkthrough.
+                -->
+                <div class="projects-grid">
+                    <article class="project-card featured reveal">
+                        <a class="project-thumb" href="https://learningautomation-production.up.railway.app/" target="_blank" rel="noopener" aria-label="Open StudyFlow live site">
+                            <img src="assets/learning-automation.jpg" alt="StudyFlow dashboard showing study progress, AI assistant and today's schedule" width="1584" height="809" loading="lazy" style="object-position: left top;">
+                            <span class="overlay"><span><i class="fas fa-arrow-up-right-from-square"></i> View live site</span></span>
+                        </a>
+                        <div class="project-body">
+                            <span class="project-kicker">Featured project</span>
+                            <h3>StudyFlow &mdash; Learning Automation</h3>
+                            <p>An AI-powered study assistant for university students. Organise units, notes, past papers and assignments, plan a timetable and calendar, log study time, and let the built-in AI generate summaries, quizzes and exam prep.</p>
+                            <ul class="tags"><li>React</li><li>Express.js</li><li>Node.js</li><li>OpenAI API</li><li>Railway</li></ul>
+                            <div class="project-links">
+                                <a href="https://learningautomation-production.up.railway.app/" target="_blank" rel="noopener" class="btn btn-primary btn-sm"><i class="fas fa-arrow-up-right-from-square"></i> Live demo</a>
+                                <a href="https://github.com/helpertesh/learning-automation" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> Source</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <a class="project-thumb" href="https://cool-arithmetic-8f3db7.netlify.app/" target="_blank" rel="noopener" aria-label="Open Hostel Booking live site">
+                            <img src="assets/hostel-booking.jpg" alt="Hostel Booking website for Dedan Kimathi University" loading="lazy">
+                            <span class="overlay"><span><i class="fas fa-arrow-up-right-from-square"></i> View live site</span></span>
+                        </a>
+                        <div class="project-body">
+                            <h3>Hostel Booking Platform</h3>
+                            <p>Booking platform for Dedan Kimathi University students to browse hostels, check availability and reserve rooms.</p>
+                            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Chart.js</li></ul>
+                            <div class="project-links">
+                                <a href="https://cool-arithmetic-8f3db7.netlify.app/" target="_blank" rel="noopener" class="btn btn-primary btn-sm"><i class="fas fa-arrow-up-right-from-square"></i> Live demo</a>
+                                <a href="https://github.com/helpertesh/hostel-bookin" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> Source</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-thumb">
+                            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=900&q=80" alt="Restaurant interior" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <h3>Restaurant Booking System</h3>
+                            <p>Online reservations with table management, customer notifications and an admin dashboard.</p>
+                            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Firebase</li></ul>
+                            <div class="project-links">
+                                <span class="soon"><i class="fas fa-hammer"></i> In progress &mdash; demo coming soon</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal delay-1">
+                        <div class="project-thumb">
+                            <img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=900&q=80" alt="Clouds and sunlight in the sky" loading="lazy">
+                        </div>
+                        <div class="project-body">
+                            <h3>Weather Forecast App</h3>
+                            <p>Real-time weather with geolocation detection, a five-day forecast and interactive maps.</p>
+                            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Weather API</li></ul>
+                            <div class="project-links">
+                                <span class="soon"><i class="fas fa-hammer"></i> In progress &mdash; demo coming soon</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card more-card reveal delay-2">
+                        <div class="stack-icon"><i class="fab fa-github"></i></div>
+                        <div>
+                            <h3>More on GitHub</h3>
+                            <p>APIs in Python and FastAPI, shop and farm management systems, and other experiments.</p>
+                        </div>
+                        <a href="https://github.com/helpertesh" target="_blank" rel="noopener" class="btn btn-ghost btn-sm"><i class="fab fa-github"></i> github.com/helpertesh</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ JOURNEY ============ -->
+        <section class="section" id="journey">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow">05 &mdash; Journey</p>
+                    <h2>How I got here.</h2>
+                    <p>Add jobs, internships, school and certifications here as they happen.</p>
+                </header>
+                <!-- EDIT: copy a .tl-item to add a job, internship, degree or certificate. Newest first. -->
+                <div class="timeline">
+                    <div class="tl-item reveal">
+                        <span class="tl-date">2026 &mdash; now</span>
+                        <h3>Going full-stack</h3>
+                        <p>Shipped StudyFlow, an AI study assistant with a React front-end and an Express back-end on Railway, and now building REST APIs with FastAPI, PostgreSQL and Docker.</p>
+                        <ul class="chips"><li>React</li><li>Express.js</li><li>OpenAI API</li><li>FastAPI</li><li>Docker</li></ul>
+                    </div>
+                    <div class="tl-item reveal delay-1">
+                        <span class="tl-date">2025</span>
+                        <h3>Hostel Booking Platform</h3>
+                        <p>Shipped a booking platform for university students with authentication, a booking flow and a Chart.js dashboard. Deployed on Netlify.</p>
+                        <ul class="chips"><li>JavaScript</li><li>Chart.js</li><li>Netlify</li></ul>
+                    </div>
+                    <div class="tl-item reveal delay-2">
+                        <span class="tl-date">2019 &mdash; 2024</span>
+                        <h3>Freelance web developer</h3>
+                        <p>Built responsive websites and small web apps, from landing pages to booking systems, and learned to turn a vague brief into something that works.</p>
+                        <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Python</li></ul>
+                    </div>
+                    <div class="tl-item reveal delay-3">
+                        <span class="tl-date">2018</span>
+                        <h3>First website</h3>
+                        <p>Wrote my first HTML page, broke it, fixed it, and got hooked on building things for the web.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CONTACT ============ -->
+        <section class="section section-alt" id="contact">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow">06 &mdash; Contact</p>
+                    <h2>Have a project in mind? Let's talk.</h2>
+                    <p>I'm currently available for freelance work and full-time roles. Send a message and I'll reply as soon as I can.</p>
+                </header>
+                <div class="contact-grid">
+                    <aside class="contact-aside reveal">
+                        <h3>Get in touch</h3>
+                        <p>Prefer email or a call? Reach me directly through any of these.</p>
+                        <ul class="contact-list">
+                            <li class="wa">
+                                <span class="contact-icon"><i class="fab fa-whatsapp"></i></span>
+                                <div><strong>WhatsApp</strong><a href="https://wa.me/254712919229?text=Hi%20Peter%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener">Chat with me on WhatsApp</a></div>
+                            </li>
+                            <li>
+                                <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                                <div><strong>Email</strong><a href="mailto:mutethiap25@gmail.com">mutethiap25@gmail.com</a></div>
+                            </li>
+                            <li>
+                                <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                                <div><strong>Phone</strong><a href="tel:+254712919229">+254 712 919 229</a></div>
+                            </li>
+                            <li>
+                                <span class="contact-icon"><i class="fas fa-location-dot"></i></span>
+                                <div><strong>Location</strong><span class="val">Nairobi, Kenya &middot; open to remote</span></div>
+                            </li>
+                        </ul>
+                        <div class="social-row">
+                            <a class="icon-link" href="https://github.com/helpertesh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a class="icon-link wa" href="https://wa.me/254712919229?text=Hi%20Peter%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a class="icon-link" href="mailto:mutethiap25@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </aside>
+
+                    <form class="contact-form reveal delay-1" id="contactForm" novalidate>
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required>
+                            </div>
+                            <div class="field">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="What's this about?">
+                        </div>
+                        <div class="field">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; <span id="year"></span> Peter Mutethia. Designed and built by me.</p>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <a href="https://github.com/helpertesh" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <a class="wa-float" href="https://wa.me/254712919229?text=Hi%20Peter%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20talk%20about%20a%20project." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i><span>Chat on WhatsApp</span></a>
+    <button class="to-top" id="toTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script>
+    (function () {
+        if (window.emailjs) emailjs.init("IilLVRlBSAiNV3Fox");
+
+        const root = document.documentElement;
+        const header = document.querySelector('.site-header');
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.getElementById('navLinks');
+        const themeToggle = document.getElementById('themeToggle');
+        const toTop = document.getElementById('toTop');
+        const toast = document.getElementById('toast');
+        const form = document.getElementById('contactForm');
+        const ticker = document.getElementById('ticker');
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+        if (ticker) ticker.innerHTML += ticker.innerHTML;
+
+        // Theme (remembered per browser)
+        function applyTheme(theme) {
+            root.setAttribute('data-theme', theme);
+            themeToggle.querySelector('i').className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+            document.querySelector('meta[name="theme-color"]').setAttribute('content', theme === 'dark' ? '#0b1120' : '#f6f8fc');
+        }
+        let saved = null;
+        try { saved = localStorage.getItem('theme'); } catch (e) {}
+        applyTheme(saved || 'dark');
+        themeToggle.addEventListener('click', () => {
+            const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+            try { localStorage.setItem('theme', next); } catch (e) {}
+        });
+
+        // Mobile nav
+        const setOpen = (open) => {
+            navLinks.classList.toggle('open', open);
+            navToggle.setAttribute('aria-expanded', String(open));
+            navToggle.querySelector('i').className = open ? 'fas fa-xmark' : 'fas fa-bars';
+        };
+        navToggle.addEventListener('click', () => setOpen(!navLinks.classList.contains('open')));
+        navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+
+        // Header + back-to-top on scroll
+        const onScroll = () => {
+            header.classList.toggle('scrolled', window.scrollY > 20);
+            toTop.classList.toggle('show', window.scrollY > 600);
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Smooth scroll with header offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', e => {
+                const id = anchor.getAttribute('href');
+                if (!id || id === '#') return;
+                const target = document.querySelector(id);
+                if (!target) return;
+                e.preventDefault();
+                const top = id === '#top' ? 0 : target.getBoundingClientRect().top + window.scrollY - 72;
+                window.scrollTo({ top, behavior: 'smooth' });
+            });
+        });
+
+        // Scroll-spy
+        const spy = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                navLinks.querySelectorAll('a:not(.nav-cta)').forEach(a =>
+                    a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+            });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        document.querySelectorAll('main section[id]').forEach(s => spy.observe(s));
+
+        // Reveal on scroll
+        const reveal = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); reveal.unobserve(entry.target); }
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => reveal.observe(el));
+
+        // Toast
+        let toastTimer;
+        function showToast(message, type) {
+            const icon = type === 'success' ? 'fa-circle-check' : type === 'error' ? 'fa-circle-exclamation' : 'fa-circle-info';
+            toast.innerHTML = '<i class="fas ' + icon + '"></i><span></span>';
+            toast.querySelector('span').textContent = message;
+            toast.className = 'toast show ' + (type || '');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => toast.classList.remove('show'), 4500);
+        }
+
+        // Contact form via EmailJS
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = form.name.value.trim();
+            const email = form.email.value.trim();
+            const message = form.message.value.trim();
+            if (!name || !email || !message) { showToast('Please fill in your name, email and message.', 'error'); return; }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showToast('Please enter a valid email address.', 'error'); return; }
+            if (!window.emailjs) { showToast('Email service failed to load. Please email me directly.', 'error'); return; }
+
+            const btn = form.querySelector('button[type="submit"]');
+            const original = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+            emailjs.sendForm('default_service', 'template_stz9bb8', this)
+                .then(() => { showToast('Message sent! I\'ll get back to you soon.', 'success'); form.reset(); })
+                .catch(err => { console.error(err); showToast('Could not send. Please try again or email me directly.', 'error'); })
+                .finally(() => { btn.disabled = false; btn.innerHTML = original; });
+        });
+    })();
+    </script>
+</body>
+</html>
